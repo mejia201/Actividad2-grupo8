@@ -14,11 +14,57 @@ body {
 
   margin-bottom: 300px;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  width: 90px;
+}
+
+.search-input {
+  width: 400px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.nav-link.position-relative {
+  padding: 0;
+}
+
+.nav-link .badge {
+  width: 20px;
+  height: 20px;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 50px;
+}
+
+footer {
+    background-color: #292c2f;
 }
 
 
@@ -34,9 +80,9 @@ body {
 
 
 
-footer {
-    background-color: #292c2f;
-  }
 
 
+ 
+
+  
  
