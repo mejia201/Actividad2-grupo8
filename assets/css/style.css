@@ -77,6 +77,51 @@ footer {
     }
 }
 
+/*Carrito*/
+.submenu {
+  position: relative;
+  
+}
+.submenu #carrito{
+  display: none;
+}
+.submenu:hover #carrito{
+  display: block;
+  position: absolute;
+  right:0;
+  top:100%;
+  z-index: 1;
+  background-color: white;
+  padding: 20px;
+  min-height: 400px;
+  min-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submenu .btnVaciar{
+  background-color: #fff;
+  padding: 0.5rem 6rem;
+  border: #000 solid 0.1rem;
+  color: #000;
+  width: 100%;
+}
+#carrito table {
+  width: 100%;
+}
+
+#carrito th, #carrito td {
+  padding: 0 0.6rem 1.5rem; 
+  text-align: right; 
+}
+
+.borrar-curso {
+  background-color: #ff0202;
+  border-radius: 50%;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
 
 /*Cards*/
 
@@ -86,18 +131,18 @@ footer {
 }
 
 .cursos{
-  width: 75vw;
+  width: 100vw;
   margin: 4rem auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-  row-gap: 2rem;
+ 
 }
+
 .caja{
   background-color: #ffffff;
+  padding: 1rem;
+  margin: 1rem;
 }
 .caja__img{
-  width: 23vw;
+  width: 100%;
 }
 .info{
   padding: 1rem;
@@ -130,10 +175,40 @@ footer {
   border-radius: 0.3rem;
   width: 100%;
   color: #fff;
+
+}
+.boton:hover{
+  background-color: #31b8e1;
+
+}
+.boton:active{
+  background-color: #33c3f0;
+
+
+}
+@media (min-width: 768px){
+    .cursos{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 80vw;
+      place-items: center;
+      row-gap: 1rem;
+      column-gap: 1rem;
+    }
+    .caja{
+      margin: 0;
+    }
+}
+@media (min-width: 1140px){
+  .cursos{
+    grid-template-columns: repeat(3, 1fr);
+    width: 75vw;
+  }
+  
 }
 
 
- 
+
 
 
 

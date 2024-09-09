@@ -35,6 +35,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item mt-1 ms-4">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
+                   
                 </li>
                 <li class="nav-item dropdown m-1">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +53,8 @@
             </form>
 
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item mt-1 me-3">
+                <!--Aqui hare modificacion pora lo del carrito-->
+                <li class="nav-item mt-1 me-3 submenu">
                     <a class="nav-link position-relative" href="#">
                      
                         <i class="fa fa-shopping-cart mt-2" style="font-size: 20px;"></i>
@@ -60,6 +62,24 @@
                             1
                         </span>
                     </a>
+                    <section id="carrito">
+                                    
+                      <table id="lista-carrito" class="tabla u-full-width">
+                          <thead>
+                              <tr>
+                                  <th>Imagen</th>
+                                  <th>Nombre</th>
+                                  <th>Precio</th>
+                                  <th>Cantidad</th>
+                                  <th></th>
+                              </tr>
+                          </thead>
+                          <tbody></tbody>
+                          
+                      </table>
+
+                      <button  id="vaciar-carrito" class="btnVaciar u-full-width">Vaciar Carrito</button>
+                    </section>
                 </li>
                 <li class="nav-item">
                   <button class="btn btn-dark ms-3">Iniciar sesión </button>
@@ -75,7 +95,7 @@
     <!-- ========== cards ========== -->
 
     <h1 class="titulo">Cursos en línea</h1>
-    <section class="cursos">
+    <section class="cursos" id="listaCursos">
 
       <article class="caja">
       <img class="caja__img" src="assets/img/curso1.jpg" alt="Curso Html Css">
@@ -87,7 +107,7 @@
           <p class="precio__last">$200</p>
           <p class="precio__now">$15</p>
         </section>
-        <button class="boton">Agregar al Carrito</button>
+        <button class="boton" data-id="1">Agregar al Carrito</button>
       </section>
     </article>
       
@@ -103,7 +123,7 @@
             <p class="precio__last">$100</p>
             <p class="precio__now">$10</p>
           </section>
-          <button class="boton">Agregar al Carrito</button>
+          <button class="boton" data-id="2">Agregar al Carrito</button>
         </section>
       </article>
       <!--Aqui termina-->
@@ -117,7 +137,7 @@
             <p class="precio__last">$300</p>
             <p class="precio__now">$40</p>
           </section>
-          <button class="boton">Agregar al Carrito</button>
+          <button class="boton" data-id="3">Agregar al Carrito</button>
         </section>
       </article>
       <!--Aqui termina-->
@@ -131,7 +151,7 @@
             <p class="precio__last">$200</p>
             <p class="precio__now">$15</p>
           </section>
-          <button  class="boton">Agregar al Carrito</button>
+          <button  class="boton" data-id="3">Agregar al Carrito</button>
         </section>  
       </article>
       <!--Aqui termina-->
@@ -145,7 +165,7 @@
             <p class="precio__last">$5</p>
             <p class="precio__now">$0.50</p>
           </section>
-          <button class="boton">Agregar al Carrito</button>
+          <button class="boton" data-id="4">Agregar al Carrito</button>
         </section>
       </article>
       <!--Aqui termina-->
@@ -159,7 +179,7 @@
             <p class="precio__last">$3000</p>
             <p class="precio__now">$700</p>
           </section>
-          <button class="boton">Agregar al Carrito</button>
+          <button class="boton" data-id="5">Agregar al Carrito</button>
         </section>
       </article>
       <!--Aqui termina-->
@@ -173,7 +193,7 @@
             <p class="precio__last">$400</p>
             <p class="precio__now">$40</p>
           </section>
-          <button class="boton">Agregar al Carrito</button>
+          <button class="boton" data-id="6">Agregar al Carrito</button>
         </section>
 
       </article>
@@ -188,7 +208,7 @@
             <p class="precio__last">$500</p>
             <p class="precio__now">$65</p>
           </section>
-          <button class="boton">Agregar al Carrito</button>
+          <button class="boton" data-id="7">Agregar al Carrito</button>
         </section>
       </article>
       <!--Aqui termina-->
