@@ -125,7 +125,8 @@ footer {
 .submenu:hover #carrito{
   display: block;
   position: absolute;
-  right:0;
+  left:50%;
+  transform: translateX(-50%); 
   top:100%;
   z-index: 1;
   background-color: white;
@@ -133,6 +134,15 @@ footer {
   min-height: 400px;
   min-width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fontSizeChikita{
+  font-size: 0.8rem;
+}
+@media (min-width: 768px){
+  .fontSizeChikita{
+    font-size: 1rem;
+  }
 }
 
 .submenu .btnVaciar{
@@ -147,8 +157,14 @@ footer {
 }
 
 #carrito th, #carrito td {
-  padding: 0 0.6rem 1.5rem; 
-  text-align: right; 
+  padding: 0 0.2rem 0.8rem; 
+  text-align: center; 
+}
+@media (min-width: 768px){
+  #carrito th, #carrito td {
+    padding: 0 0.6rem 1.5rem;  
+    text-align: right; 
+  }
 }
 
 .borrar-curso {

@@ -79,6 +79,7 @@ function agregarCurso(e) {
     if (e.target.classList.contains("boton")) {
         const cursoSelect = e.target.parentElement.parentElement;
         leerDatosCurso(cursoSelect);
+        actualizarCantidadCarrito();
        
     }
 }
@@ -88,6 +89,8 @@ function eliminarCurso(e){
         const dataId = e.target.getAttribute("data-id");
         articulosCarrito = articulosCarrito.filter( curso => curso.id !== dataId);
         carritoHtml();
+        actualizarCantidadCarrito();
+
     }
 }
 //lee el contenido html del curso y extrae la informcion
@@ -133,13 +136,13 @@ function carritoHtml(){
         <img src = '${curso.imagen}' width = 80>
         </td>
         <td>
-        ${curso.titulo}
+        <p class = "fontSizeChikita">${curso.titulo}</p>
         </td>
         <td>
-        ${curso.precio}
+        <p class = "fontSizeChikita"> ${curso.precio}</p>
         </td>
         <td>
-        ${curso.cantidad}
+         <p class = "fontSizeChikita">${curso.cantidad}</p> 
         </td>
         <td>
         <a href = "#" class = "borrar-curso" data-id = "${curso.id}">X</a>
@@ -155,4 +158,11 @@ function limpiarHtml(){
         contenedorCarrito.removeChild(contenedorCarrito.firstChild);
     }
 }
+
+//numero carrito
+const CantCarrito = document.querySelector("#cantidad");
+function actualizarCantidadCarrito() {
+    CantCarrito.textContent = articulosCarrito.length;
+}
+
 
