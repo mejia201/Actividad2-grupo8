@@ -31,6 +31,21 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
+
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  width: 90px;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
 .logo {
   width: 90px;
 }
@@ -98,14 +113,6 @@ footer {
 }
 
 
-@media (max-width: 34em) {
-    body {
-      margin-bottom: 550px;
-    }
-    .footer {
-      height: 50px;
-    }
-}
 
 /*Carrito*/
 .submenu {
@@ -216,6 +223,81 @@ footer {
 
 
 }
+
+
+/***** Medias querys *****/ 
+
+
+@media (max-width: 768px) {
+  .nav-link .badge {
+    width: 20px;
+    height: 20px;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  
+
+  #darkModeButton {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 35px; 
+    height: 35px;
+  }
+
+  #darkModeIcon {
+    font-size: 16px; 
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .navbar .logo {
+    margin: 0 auto;
+  }
+
+  .nav-link {
+    padding-right: 0;
+    margin-bottom: 10px; 
+  }
+}
+
+
+@media (min-width: 769px) {
+  .nav-link .badge {
+    width: 20px;
+    height: 20px;
+    
+    line-height: 15px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  
+
+  #darkModeButton {
+    margin-left: auto; 
+    width: 40px; 
+    height: 40px;
+    margin-bottom: 10px; 
+  }
+
+  #darkModeIcon {
+    font-size: 18px; 
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    padding-right: 20px;
+    margin-bottom: 10px; 
+  }
+}
+
+
+
 @media (min-width: 768px){
     .cursos{
       display: grid;
@@ -237,7 +319,14 @@ footer {
   
 }
 
-
+@media (max-width: 34em) {
+  body {
+    margin-bottom: 550px;
+  }
+  .footer {
+    height: 50px;
+  }
+}
 
 
 
