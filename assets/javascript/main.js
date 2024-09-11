@@ -166,3 +166,13 @@ function actualizarCantidadCarrito() {
 }
 
 
+
+
+//Activar Modo Oscuro con el btn darkModeButton
+function changeColor(){
+
+    let bg = document.getElementById("container").style.background = "#1d1d1d";
+    let title =document.getElementById("titulo").style.color = "#dedede"
+    
+}
+
