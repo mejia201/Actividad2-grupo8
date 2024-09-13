@@ -1,4 +1,18 @@
 
+//funcion reutilizable para generar una alerta
+const AlertMessage = (mensaje, tipo) => {
+    Swal.fire({
+      title: tipo === 'success' ? 'Éxito' : 'Error',
+      text: mensaje,
+      icon: tipo,
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000 
+    });
+  };
+
+
 //Agregar categorias y listarlas en un a
   
   const formAgregarCategoria = document.getElementById('formAgregarCategoria');
@@ -33,6 +47,57 @@
     }
   });
 
+//agregar cursos
+let cursoIdCounter = 8;  
+const formAgregarCurso = document.getElementById('formAgregarCurso');
+const listado = document.querySelector('.cursos'); 
+
+formAgregarCurso.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+ 
+  const nombreCurso = document.getElementById('nombreCurso').value;
+  const nombreInstructor = document.getElementById('nombreInstructor').value;
+  const precioCurso = document.getElementById('precioCurso').value;
+  const precioDescuento = document.getElementById('precioDescuento').value;
+  const imagenCurso = document.getElementById('imagenCurso').value;
+
+  
+  if (nombreCurso.trim() !== '' && nombreInstructor.trim() !== '' && precioCurso.trim() !== '' && precioDescuento.trim() !== '' && imagenCurso.trim() !== '') {
+
+   
+    const nuevoCurso = document.createElement('article');
+    nuevoCurso.classList.add('caja');
+
+    nuevoCurso.innerHTML = `
+      <img class="caja__img" src="${imagenCurso}" alt="${nombreCurso}">
+      <section class="info">
+        <h3 class="info__titulo">${nombreCurso}</h3>
+        <p class="info__nombre">${nombreInstructor}</p>
+        <img class="info__stars" src="assets/img/estrellas.png" alt="estrellas">
+        <section class="precio">
+          <p class="precio__last">$${precioCurso}</p>
+          <p class="precio__now">$${precioDescuento}</p>
+        </section>
+        <button class="boton" data-id="${cursoIdCounter}">Agregar al Carrito</button>
+      </section>
+    `;
+
+    cursoIdCounter++;
+
+ 
+    listado.appendChild(nuevoCurso);
+    formAgregarCurso.reset();
+    const modal = bootstrap.Modal.getInstance(document.getElementById('CursosModal'));
+    modal.hide();
+
+   
+    AlertMessage('El curso se ha agregado con éxito', 'success');
+  } else {
+    
+    AlertMessage('Por favor, completa todos los campos antes de agregar el curso.', 'error');
+  }
+});
 
 
 // Buscar dinamicamente cursos por el nombre
@@ -54,6 +119,9 @@ buscarInput.addEventListener('input', function() {
     });
 });
 
+
+
+  
 //Carrito
 const carrito = document.querySelector("#carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
@@ -69,6 +137,7 @@ function cargarEventListener() {
     carrito.addEventListener("click", eliminarCurso);
     vaciarCarrito.addEventListener("click", () =>{
         articulosCarrito = [];
+        CantCarrito.textContent = articulosCarrito.length;
         carritoHtml();
     })
 }
@@ -166,13 +235,4 @@ function actualizarCantidadCarrito() {
 }
 
 
-
-
-//Activar Modo Oscuro con el btn darkModeButton
-function changeColor(){
-
-    let bg = document.getElementById("container").style.background = "#1d1d1d";
-    let title =document.getElementById("titulo").style.color = "#dedede"
-    
-}
 

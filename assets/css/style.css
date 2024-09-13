@@ -5,16 +5,21 @@
 body {
     font-family: 'Roboto', sans-serif !important;
     background-color: #f0f2f3 !important;
+    margin-bottom: 300px;
+
 }
 
 html {
   position: relative;
   min-height: 100%;
 }
-body {
-  margin-bottom: 300px;
-}
 
+
+main {
+
+  margin-bottom: 10rem;
+
+}
 * {
   margin: 0;
   padding: 0;
@@ -84,34 +89,15 @@ body {
 }
 
 
-#darkModeButton {
-  background-color: #000000; 
-  border-radius: 50%;      
-  padding: 10px;           
-  width: 35px;            
-  height: 35px;            
-  border: none;            
-  display: flex;           
-  align-items: center;     
-  justify-content: center; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-#darkModeButton .fas {
-  color: #ffffff; 
-}
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 50px;
+  background-color: #292c2f;
 }
 
-footer {
-    background-color: #292c2f;
-}
 
 
 
@@ -181,65 +167,93 @@ footer {
 
 .titulo{
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .cursos{
   width: 100vw;
   margin: 4rem auto;
+  margin-bottom: 10rem;
  
 }
 
-.caja{
-  background-color: #ffffff;
-  padding: 1rem;
-  margin: 1rem;
-}
-.caja__img{
-  width: 100%;
-}
-.info{
-  padding: 1rem;
-  line-height: 1.3rem;
-}
-.info__titulo{
-  font-weight: bold;
-  font-size: 1.1rem;
 
+.caja {
+  width: 300px;
+  height: 450px; 
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
 }
-.info__nombre{
-  margin-bottom: 0
+
+
+.caja__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
-.precio{
+
+
+.info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.info__titulo {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.info__nombre {
+  font-size: 1em;
+  color: #555;
+}
+
+.info__stars {
+  width: 60px; 
+  object-fit: contain;
+}
+
+.precio {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 10px;
 }
-.precio__last{
+
+.precio__last {
   text-decoration: line-through;
+  color: #999;
 }
-.precio__now{
-  font-size: 1.3rem;
+
+.precio__now {
+  color: #e74c3c;
   font-weight: bold;
 }
-.boton{
+
+
+.boton {
+  background-color: #3498db;
+  color: white;
   border: none;
-  background-color: #33c3f0;
-  padding: 0.5rem;
-  border-radius: 0.3rem;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
   width: 100%;
-  color: #fff;
-
+  border-radius: 5px;
 }
-.boton:hover{
-  background-color: #31b8e1;
 
+.boton:hover {
+  background-color: #2980b9;
 }
-.boton:active{
-  background-color: #33c3f0;
 
-
-}
 
 
 /***** Medias querys *****/ 
@@ -254,30 +268,6 @@ footer {
     border-radius: 50%;
   }
   
-
-  #darkModeButton {
-    margin: 0 auto;
-    margin-top: 10px;
-    width: 35px; 
-    height: 35px;
-  }
-
-  #darkModeIcon {
-    font-size: 16px; 
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-  }
-
-  .navbar .logo {
-    margin: 0 auto;
-  }
-
-  .nav-link {
-    padding-right: 0;
-    margin-bottom: 10px; 
-  }
 }
 
 
@@ -285,65 +275,65 @@ footer {
   .nav-link .badge {
     width: 20px;
     height: 20px;
-    
     line-height: 15px;
     text-align: center;
     border-radius: 50%;
   }
   
-
-  #darkModeButton {
-    margin-left: auto; 
-    width: 40px; 
-    height: 40px;
-    margin-bottom: 10px; 
-  }
-
-  #darkModeIcon {
-    font-size: 18px; 
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-  }
-
-  .nav-link {
-    padding-right: 20px;
-    margin-bottom: 10px; 
-  }
 }
 
 
 
-@media (min-width: 768px){
-    .cursos{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      width: 80vw;
-      place-items: center;
-      row-gap: 1rem;
-      column-gap: 1rem;
-    }
-    .caja{
-      margin: 0;
-    }
+@media (max-width: 768px) {
+  .cursos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    width: 90vw; 
+    margin: 0 auto;
+    place-items: center; 
+    row-gap: 1rem; 
+    column-gap: 1rem; 
+  }
+
+  .caja {
+    margin: 0;
+    width: 100%; 
+    max-width: 300px; 
+  }
 }
-@media (min-width: 1140px){
-  .cursos{
+
+
+@media (min-width: 769px) and (max-width: 1139px) {
+  .cursos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    width: 80vw;
+    margin: 0 auto; 
+    place-items: center; 
+    row-gap: 1rem; 
+    column-gap: 1rem; 
+  }
+
+  .caja {
+    margin: 0;
+  }
+}
+
+
+@media (min-width: 1140px) {
+  .cursos {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 75vw;
+    margin: 0 auto; 
+    place-items: center; 
+    row-gap: 1rem; 
+    column-gap: 1rem; 
   }
-  
 }
 
-@media (max-width: 34em) {
-  body {
-    margin-bottom: 550px;
-  }
-  .footer {
-    height: 50px;
-  }
-}
+
+
 
 
 
